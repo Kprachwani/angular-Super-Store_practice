@@ -1,0 +1,17 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products">
+  <h3>
+    <a [title]="'Product ' + product.id + ' details'">
+      {{ product.id }}
+    </a>
+  </h3>
+
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+
+  <button type="button" (click)="share()">buy</button>
+
+  <p *ngIf="product && product.value > 40">
+    <button type="button" (click)="onNotify()">Notify Me</button>
+  </p>
+</div>
